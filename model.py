@@ -26,8 +26,16 @@ def row_sum(matrix):
     # TODO: return the sum along axis 1 keeping the reduced dimension
     return np.sum(matrix, axis=1, keepdims=True)
 
-# Step 4 - exp_shifted (not yet solved)
-# TODO: implement
+# Step 4 - exp_shifted
+import numpy as np
+
+def exp_shifted(logits):
+    """Subtract per-row max from logits and exponentiate elementwise."""
+    # TODO: shift each row of logits by its max and return elementwise exp
+    maxx = row_max(logits)
+    shifted_logits = logits - maxx
+    exp_shifted_logits = np.exp(shifted_logits)
+    return exp_shifted_logits
 
 # Step 5 - stable_softmax (not yet solved)
 # TODO: implement
