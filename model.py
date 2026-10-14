@@ -345,7 +345,7 @@ def flatten_backward(d_out, cache):
 # Step 29 - linear_forward
 def linear_forward(x, weights, bias):
     # TODO: compute X @ W + b and cache the inputs needed for backprop.
-    out = x @ W + b
+    out = x @ weights + b
     cache = {
         'x': x,
         'weights': weights
