@@ -262,8 +262,18 @@ def maxpool2d_forward(x, kernel, stride):
 
     return (out, cache)
 
-# Step 23 - scatter_grad_window (not yet solved)
-# TODO: implement
+# Step 23 - scatter_grad_window
+import numpy as np
+
+def scatter_grad_window(grad_value, argmax_index, kernel):
+    # TODO: place grad_value at the argmax position within a (kernel, kernel) zero array.
+    ans = np.zeros((kernel, kernel))
+
+    row, col = divmod(argmax_index, kernel)
+
+    ans[row, col] = grad_value
+
+    return ans
 
 # Step 24 - maxpool2d_backward (not yet solved)
 # TODO: implement
