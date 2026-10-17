@@ -419,7 +419,7 @@ import numpy as np
 
 def adam_update_m(m, grad, beta_one):
     # TODO: return the updated first moment estimate using beta_one and grad.
-    return m*beta_one + (1 - beta_one)*grad
+    return beta_one*m + (1 - beta_one)*grad
 
 # Step 38 - adam_update_v (not yet solved)
 # TODO: implement
